@@ -9,9 +9,12 @@ pipeline {
         nodejs "node"
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
+            environment {
+                  HOME="."
+                }
             steps {
-                sh 'npm install --unsafe-perm' 
+                sh 'npm install' 
             }
         }
     }
